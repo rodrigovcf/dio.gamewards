@@ -5,6 +5,8 @@ import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import me.dio.gameawards.domain.model.Game;
@@ -21,7 +23,7 @@ public class GameServiceImpl implements GameService {
 	
 	@Override
 	public List<Game> findAll() {
-		List<Game> games = repository.findAll();
+		List<Game> games = repository.findAll(Sort.by(Direction.DESC, "votes"));
 		return games;
 	}   
 

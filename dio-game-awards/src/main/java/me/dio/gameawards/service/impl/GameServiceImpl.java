@@ -57,4 +57,11 @@ public class GameServiceImpl implements GameService {
 		repository.delete(gameDb);
 	}
 
+	@Override
+	public void vote(Long id) {
+		Game gameDb = findById(id);
+		gameDb.setVotes(gameDb.getVotes() + 1);
+		update(id, gameDb);
+	}
+
 }

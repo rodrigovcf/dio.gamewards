@@ -6,10 +6,11 @@ export async function clientGetGames(){
 
     //Agora extraio o JSON que recebi da api
     const json = await response.json()
+    console.log(json)
     return json
 }
 
-export function clientSendingVotes(id: number){
+export async function clientSendingVotes(id: number){
     
     const requestOption = {
         method:'PATCH'
@@ -18,7 +19,7 @@ export function clientSendingVotes(id: number){
     fetch(`${baseApiURL}games/${id}/vote`, requestOption)
         .then(response => response.text())
         .then(result => console.log(result))
-        .catch( error => console.log('error', error))        
+        .catch(error => console.log('error', error))        
 }
 
 export async function clientGetWinner(){

@@ -1,4 +1,4 @@
-export interface gameInterface{
+export default interface gameInterface{
     id: number;
     name: string;
     description: string;

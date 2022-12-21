@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {Fragment, useEffect, useState} from "react"
 import {View, Text, StyleSheet, ScrollView} from "react-native"
 
 import {GameCard} from '../components/Votes/GameCard'
@@ -22,10 +22,16 @@ export function VotesScreen(){
     return(
         <View style={styles.container}>
             <Header/>
+            
             <ScrollView style={styles.gameArea}>
-                {gameList.map(game => GameCard(game))}
-            </ScrollView>            
-        </View>
+                {gameList.map((game, index) => 
+                    <Fragment key={index}>
+                        {GameCard(game)}
+                    </Fragment>
+                )}
+            </ScrollView>
+            
+        </View>        
     )
 }
 

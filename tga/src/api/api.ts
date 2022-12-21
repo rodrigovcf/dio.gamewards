@@ -6,20 +6,21 @@ export async function clientGetGames(){
 
     //Agora extraio o JSON que recebi da api
     const json = await response.json()
-    console.log(json)
+    // console.log(json)
     return json
 }
 
 export async function clientSendingVotes(id: number){
-    
-    const requestOption = {
-        method:'PATCH'
-    }
 
-    fetch(`${baseApiURL}games/${id}/vote`, requestOption)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error))        
+  const myInit : RequestInit = {
+    method: 'PATCH',
+    redirect: 'follow'
+  };
+  
+  fetch(`${baseApiURL}games/${id}/vote`, myInit)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
 }
 
 export async function clientGetWinner(){

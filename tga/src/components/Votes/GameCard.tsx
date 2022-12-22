@@ -1,8 +1,8 @@
 import React from "react"
 import { View, Text, StyleSheet, Image, Button, Alert } from "react-native"
 
-import {clientSendingVotes} from '../../api/api'
-import gameInterface from "../../interfaces/gameInterface"
+import { clientSendingVotes } from '../../api/api'
+import { gameInterface } from "../../interfaces/gameInterface"
 
 const sendingVote = (id:number) => {
     Alert.alert(

@@ -50,6 +50,10 @@ const styles = StyleSheet.create({
       height: 300,
     },
     title:{
-        
+      textAlign:'center',
+      color:'#fff',
+      fontWeight:'bold',
+      fontSize:25,
+      padding:10
     }
   });

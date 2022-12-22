@@ -3,7 +3,7 @@ import {View, StyleSheet} from "react-native"
 
 import { useFocusEffect } from "@react-navigation/native";
 
-import gameInterface from "../interfaces/gameInterface";
+import { gameInterface } from "../interfaces/gameInterface";
 import { clientGetWinner } from "../api/api";
 import { Winner } from "../components/Winner/Winner";
 
@@ -25,7 +25,7 @@ export function WinnerScreen(){
                 const winner = await clientGetWinner()
                 setGame(winner)
                 console.log(winner)
-            })
+            })() //O uso desse () parece definir que a funcao seja autoexecutavel
         },[])
     )
 

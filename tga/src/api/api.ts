@@ -6,7 +6,7 @@ export async function clientGetGames(){
 
     //Agora extraio o JSON que recebi da api
     const json = await response.json()
-    // console.log(json)
+
     return json
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
-import gameInterface from '../../interfaces/gameInterface'
+import {gameInterface} from '../../interfaces/gameInterface'
 
 export function Winner (props: gameInterface | any){
     return(
